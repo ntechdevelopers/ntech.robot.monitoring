@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ntech.MAUI.RobotMonitoring.MainPage"
+             Title="Robot Controller">
+    <Grid Grid.Row="1" ColumnDefinitions="*,Auto">
+
+        <!-- Control Panel Area -->
+        <Grid x:Name="ControlPanelArea" 
+          HorizontalOptions="Center" 
+          VerticalOptions="Center">
+            <AbsoluteLayout WidthRequest="300" HeightRequest="300">
+
+                <!-- Outer Circle -->
+                <Ellipse Fill="#E0E0E0"
+                     Stroke="#0288D1"
+                     StrokeThickness="5"
+                     WidthRequest="300"
+                     HeightRequest="300"
+                     AbsoluteLayout.LayoutBounds="0,0,300,300"/>
+
+                <!-- Inner Circle -->
+                <Ellipse Stroke="#E91E63"
+                     StrokeThickness="2"
+                     WidthRequest="220"
+                     HeightRequest="220"
+                     AbsoluteLayout.LayoutBounds="40,40,220,220"/>
+
+                <!-- Rotation Buttons -->
+                <!-- 0 degrees (Left) -->
+                <Button x:Name="Btn0"
+                    Text="0"
+                    BackgroundColor="#0288D1"
+                    TextColor="White"
+                    WidthRequest="50"
+                    HeightRequest="50"
+                    CornerRadius="25"
+                    Clicked="Rotate_Clicked"
+                    AbsoluteLayout.LayoutBounds="20,125,50,50"/>
+
+                <!-- 90 degrees (Top) -->
+                <Button x:Name="Btn90"
+                    Text="90"
+                    BackgroundColor="#0288D1"
+                    TextColor="White"
+                    WidthRequest="50"
+                    HeightRequest="50"
+                    CornerRadius="25"
+                    Clicked="Rotate_Clicked"
+                    AbsoluteLayout.LayoutBounds="125,20,50,50"/>
+
+                <!-- 180 degrees (Right) -->
+                <Button x:Name="Btn180"
+                    Text="180"
+                    BackgroundColor="#0288D1"
+                    TextColor="White"
+                    WidthRequest="50"
+                    HeightRequest="50"
+                    CornerRadius="25"
+                    Clicked="Rotate_Clicked"
+                    AbsoluteLayout.LayoutBounds="230,125,50,50"/>
+
+                <!-- 270 degrees (Bottom) -->
+                <Button x:Name="Btn270"
+                    Text="270"
+                    BackgroundColor="#0288D1"
+                    TextColor="White"
+                    WidthRequest="50"
+                    HeightRequest="50"
+                    CornerRadius="25"
+                    Clicked="Rotate_Clicked"
+                    AbsoluteLayout.LayoutBounds="125,230,50,50"/>
+
+                <!-- Center Buttons -->
+                <!-- Get Wafer (Up Arrow) -->
+                <Button x:Name="BtnGetWafer"
+                    Text="▲"
+                    BackgroundColor="#FF9800"
+                    TextColor="White"
+                    WidthRequest="50"
+                    HeightRequest="50"
+                    CornerRadius="25"
+                    IsEnabled="{Binding AllowGetWafer}"
+                    Clicked="GetWafer_Clicked"
+                    AbsoluteLayout.LayoutBounds="125,100,50,50"/>
+
+                <!-- Put Wafer (Down Arrow) -->
+                <Button x:Name="BtnPutWafer"
+                    Text="▼"
+                    BackgroundColor="#FF9800"
+                    TextColor="White"
+                    WidthRequest="50"
+                    HeightRequest="50"
+                    CornerRadius="25"
+                    IsEnabled="{Binding AllowPutWafer}"
+                    Clicked="PutWafer_Clicked"
+                    AbsoluteLayout.LayoutBounds="125,150,50,50"/>
+
+                <!-- Center Circle -->
+                <Ellipse Fill="#E0E0E0"
+                     Stroke="#FF9800"
+                     StrokeThickness="2"
+                     WidthRequest="30"
+                     HeightRequest="30"
+                     AbsoluteLayout.LayoutBounds="135,135,30,30"/>
+
+            </AbsoluteLayout>
+        </Grid>
+
+        <!-- Machine Area -->
+        <Border Grid.Column="1"
+            Stroke="#03A9F4"
+            StrokeThickness="2"
+            Padding="5"
+            Margin="10,0,0,0">
+
+            <Grid RowDefinitions="*,*,*" 
+              ColumnDefinitions="*,*,*"
+              WidthRequest="480"
+              HeightRequest="480">
+
+                <!-- PM01 - Top Center -->
+                <Border Grid.Row="0" Grid.Column="1" 
+                    Stroke="#03A9F4"
+                    StrokeThickness="1"
+                    BackgroundColor="#1034A6"
+                    Margin="2"
+                    StrokeShape="RoundRectangle 20">
+                    <Grid x:Name="PM01BodyWaferTable" 
+                      WidthRequest="150" 
+                      HeightRequest="150"/>
+                </Border>
+
+                <!-- PM10 - Middle Left (Initial Wafer Location) -->
+                <Border Grid.Row="1" Grid.Column="0"
+                    Stroke="#03A9F4"
+                    StrokeThickness="1"
+                    BackgroundColor="#1034A6"
+                    Margin="2"
+                    StrokeShape="RoundRectangle 20">
+                    <Grid x:Name="PM10BodyWaferTable" 
+                      WidthRequest="150" 
+                      HeightRequest="150">
+                        <!-- Initial Wafer -->
+                        <Ellipse x:Name="Wafer"
+                             WidthRequest="140"
+                             HeightRequest="140"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#C9D300" Offset="1"/>
+                                    <GradientStop Color="White" Offset="0"/>
+                                    <GradientStop Color="#E6EE53" Offset="0.513"/>
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Grid>
+                </Border>
+
+                <!-- PM12 - Middle Right -->
+                <Border Grid.Row="1" Grid.Column="2"
+                    Stroke="#03A9F4"
+                    StrokeThickness="1"
+                    BackgroundColor="#1034A6"
+                    Margin="2"
+                    StrokeShape="RoundRectangle 20">
+                    <Grid x:Name="PM12BodyWaferTable" 
+                      WidthRequest="150" 
+                      HeightRequest="150"/>
+                </Border>
+
+                <!-- PM21 - Bottom Center -->
+                <Border Grid.Row="2" Grid.Column="1"
+                    Stroke="#03A9F4"
+                    StrokeThickness="1"
+                    BackgroundColor="#1034A6"
+                    Margin="2"
+                    StrokeShape="RoundRectangle 20">
+                    <Grid x:Name="PM21BodyWaferTable" 
+                      WidthRequest="150" 
+                      HeightRequest="150"/>
+                </Border>
+
+                <!-- Robot Area - Center -->
+                <Grid x:Name="RobotArea" 
+                  Grid.Row="1" 
+                  Grid.Column="1"
+                  Margin="2">
+
+                    <!-- Robot Body -->
+                    <Grid x:Name="RobotBody" 
+                      WidthRequest="150" 
+                      HeightRequest="150">
+
+                        <!-- Outer Ring -->
+                        <Ellipse Stroke="White"
+                             StrokeThickness="2"
+                             WidthRequest="160"
+                             HeightRequest="160"/>
+
+                        <!-- Position Indicator -->
+                        <Ellipse x:Name="PositionIndicator"
+                             Fill="#E91E63"
+                             WidthRequest="5"
+                             HeightRequest="5"
+                             TranslationX="77"
+                             TranslationY="0"/>
+
+                        <!-- Main Body Circle -->
+                        <Ellipse Stroke="#0047AB"
+                             StrokeThickness="10"
+                             WidthRequest="110"
+                             HeightRequest="110">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#0047AB" Offset="1"/>
+                                    <GradientStop Color="White" Offset="0"/>
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                        <!-- Robot Arm -->
+                        <BoxView x:Name="RobotArm"
+                             Color="#007FFF"
+                             WidthRequest="80"
+                             HeightRequest="20"
+                             TranslationX="40"
+                             HorizontalOptions="Start"/>
+
+                        <!-- Arm Gripper -->
+                        <Grid x:Name="ArmGripper" 
+                          WidthRequest="30"
+                          HeightRequest="20"
+                          TranslationX="95">
+                            <BoxView Color="#E91E63" 
+                                 HeightRequest="6"
+                                 VerticalOptions="Start"
+                                 Margin="0,0,0,0"/>
+                            <BoxView Color="#E91E63" 
+                                 HeightRequest="6"
+                                 VerticalOptions="End"
+                                 Margin="0,0,0,0"/>
+                            <Ellipse Fill="#E91E63"
+                                 Stroke="#E91E63"
+                                 StrokeThickness="2"
+                                 WidthRequest="9"
+                                 HeightRequest="9"
+                                 HorizontalOptions="End"/>
+                        </Grid>
+
+                        <!-- Inner Circle -->
+                        <Ellipse Stroke="#0047AB"
+                             StrokeThickness="2"
+                             WidthRequest="50"
+                             HeightRequest="50">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#007FFF" Offset="1"/>
+                                    <GradientStop Color="White" Offset="0"/>
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Grid>
+
+                    <!-- Robot Wafer Holder (Hidden, for carrying wafer) -->
+                    <Grid x:Name="RobotBodyWaferTable" 
+                      WidthRequest="150" 
+                      HeightRequest="150"
+                      IsVisible="False"
+                      TranslationX="-162"/>
+
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</ContentPage>

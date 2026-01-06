@@ -1,0 +1,111 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Working\\Ntechdevelopers\\NtechPOC\\Ntech.MAUI.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{66A441D3-9D60-418C-AC70-71818615FA34}|Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring.csproj|e:\\working\\ntechdevelopers\\ntechpoc\\ntech.maui.robotmonitoring\\ntech.wpf.robotmonitoring\\ntech.wpf.robotmonitoring\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{66A441D3-9D60-418C-AC70-71818615FA34}|Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring.csproj|solutionrelative:ntech.wpf.robotmonitoring\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66A441D3-9D60-418C-AC70-71818615FA34}|Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring.csproj|e:\\working\\ntechdevelopers\\ntechpoc\\ntech.maui.robotmonitoring\\ntech.wpf.robotmonitoring\\ntech.wpf.robotmonitoring\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{66A441D3-9D60-418C-AC70-71818615FA34}|Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring.csproj|solutionrelative:ntech.wpf.robotmonitoring\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66A441D3-9D60-418C-AC70-71818615FA34}|Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring.csproj|e:\\working\\ntechdevelopers\\ntechpoc\\ntech.maui.robotmonitoring\\ntech.wpf.robotmonitoring\\ntech.wpf.robotmonitoring\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66A441D3-9D60-418C-AC70-71818615FA34}|Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring.csproj|solutionrelative:ntech.wpf.robotmonitoring\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66A441D3-9D60-418C-AC70-71818615FA34}|Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring.csproj|e:\\working\\ntechdevelopers\\ntechpoc\\ntech.maui.robotmonitoring\\ntech.wpf.robotmonitoring\\ntech.wpf.robotmonitoring\\ntech.wpf.robotmonitoring.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{66A441D3-9D60-418C-AC70-71818615FA34}|Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring.csproj|solutionrelative:ntech.wpf.robotmonitoring\\ntech.wpf.robotmonitoring.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66A441D3-9D60-418C-AC70-71818615FA34}|Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring.csproj|e:\\working\\ntechdevelopers\\ntechpoc\\ntech.maui.robotmonitoring\\ntech.wpf.robotmonitoring\\ntech.wpf.robotmonitoring\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66A441D3-9D60-418C-AC70-71818615FA34}|Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring.csproj|solutionrelative:ntech.wpf.robotmonitoring\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "E:\\Working\\Ntechdevelopers\\NtechPOC\\Ntech.MAUI.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\App.xaml.cs",
+              "RelativeDocumentMoniker": "Ntech.WPF.RobotMonitoring\\App.xaml.cs",
+              "ToolTip": "E:\\Working\\Ntechdevelopers\\NtechPOC\\Ntech.MAUI.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\App.xaml.cs",
+              "RelativeToolTip": "Ntech.WPF.RobotMonitoring\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T07:40:21.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Ntech.WPF.RobotMonitoring",
+              "DocumentMoniker": "E:\\Working\\Ntechdevelopers\\NtechPOC\\Ntech.MAUI.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring.csproj",
+              "RelativeDocumentMoniker": "Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring.csproj",
+              "ToolTip": "E:\\Working\\Ntechdevelopers\\NtechPOC\\Ntech.MAUI.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring.csproj",
+              "RelativeToolTip": "Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-27T07:39:21.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.xaml",
+              "DocumentMoniker": "E:\\Working\\Ntechdevelopers\\NtechPOC\\Ntech.MAUI.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\App.xaml",
+              "RelativeDocumentMoniker": "Ntech.WPF.RobotMonitoring\\App.xaml",
+              "ToolTip": "E:\\Working\\Ntechdevelopers\\NtechPOC\\Ntech.MAUI.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\App.xaml",
+              "RelativeToolTip": "Ntech.WPF.RobotMonitoring\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-27T07:38:07.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "E:\\Working\\Ntechdevelopers\\NtechPOC\\Ntech.MAUI.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Ntech.WPF.RobotMonitoring\\MainWindow.xaml",
+              "ToolTip": "E:\\Working\\Ntechdevelopers\\NtechPOC\\Ntech.MAUI.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\MainWindow.xaml",
+              "RelativeToolTip": "Ntech.WPF.RobotMonitoring\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-27T07:36:11.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "E:\\Working\\Ntechdevelopers\\NtechPOC\\Ntech.MAUI.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Ntech.WPF.RobotMonitoring\\MainWindow.xaml.cs",
+              "ToolTip": "E:\\Working\\Ntechdevelopers\\NtechPOC\\Ntech.MAUI.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\Ntech.WPF.RobotMonitoring\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Ntech.WPF.RobotMonitoring\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAAwIgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T07:36:08.811Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

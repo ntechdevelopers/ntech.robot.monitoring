@@ -1,0 +1,290 @@
+﻿<Window x:Class="Ntech.WPF.RobotMonitoring.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ntech.WPF.RobotMonitoring"
+        mc:Ignorable="d"
+        Title="Robot Controller" Height="576" Width="900" 
+        BorderBrush="{DynamicResource DrakPrimary}" BorderThickness="1"
+        WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Window.Resources>
+        <Storyboard x:Key="PickUpWafer">
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="RobotArmArea">
+                <EasingThicknessKeyFrame KeyTime="0" Value="50,0,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:1" Value="-30,0,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:2" Value="50,0,0,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="RobotBodyArea02">
+                <EasingThicknessKeyFrame KeyTime="0:0:1" Value="-162,2,0,2"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:2" Value="2,2,0,2"/>
+            </ThicknessAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="PutWafer01">
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="RobotArmArea">
+                <EasingThicknessKeyFrame KeyTime="0" Value="50,0,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:1" Value="-30,0,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:1.5" Value="50,0,0,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="RobotBodyArea02">
+                <EasingThicknessKeyFrame KeyTime="0" Value="0,2"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:1" Value="-162,2,0,2"/>
+            </ThicknessAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Rotate0">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="RobotArea">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Rotate90">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="RobotArea">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="90"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Rotate180">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="RobotArea">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="180"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Rotate270">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="RobotArea">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="270"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Rotate360">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="RobotArea">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="360"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="PutWaferPart02">
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="RobotArmArea">
+                <EasingThicknessKeyFrame KeyTime="0" Value="-30,0,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:1" Value="50,0,0,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="26"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border x:Name="Header" MouseLeftButtonDown="Border_MouseLeftButtonDown" 
+                Background="{DynamicResource DrakPrimary}">
+
+            <Grid>
+                <Button Content="X" Click="Button_Click" HorizontalAlignment="Right" Margin="0,2" Width="22"/>
+            </Grid>
+        </Border>
+        <Grid x:Name="Body" Grid.RowSpan="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="ControlPanelArea">
+                <Border Width="300" Height="300">
+
+                    <Grid x:Name="ControlPanel">
+                        <Rectangle RadiusY="149" RadiusX="149" Fill="{DynamicResource LightPrimary}"
+						Stroke="{DynamicResource DrakPrimary}" StrokeThickness="5" d:IsHidden="True"/>
+                        <Rectangle RadiusY="149" RadiusX="149" Stroke="{DynamicResource Pink}" Margin="40"/>
+                        <Grid Margin="20">
+                            <Button Width="50" Height="50" Click="Rotate"
+                       		ToolTip="Xoay 0 độ"
+                       		Content="0" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{DynamicResource RotateStyle}" Foreground="{DynamicResource TextIcon}" BorderBrush="{x:Null}" Background="{x:Null}"/>
+                            <Button Width="50" Height="50" Click="Rotate"
+                       		ToolTip="Xoay 90 độ"
+                       		Content="90" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0" Style="{DynamicResource RotateStyle}"/>
+                            <Button Width="50" Height="50" Click="Rotate"
+                       		ToolTip="Xoay 180 độ"
+                       		Content="180"  HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0" Style="{DynamicResource RotateStyle}"/>
+                            <Button Width="50" Height="50" Click="Rotate"
+                       		ToolTip="Xoay 270 độ"
+                       		Content="270"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0" Style="{DynamicResource RotateStyle}"/>
+                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Button Width="50" Height="50" Click="GetWafer"
+                       			ToolTip="Lấy hàng"
+                       			IsEnabled="{Binding AllowGetWafer, UpdateSourceTrigger=PropertyChanged}"
+                       			Content="▲" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource RotateStyle}" Background="{DynamicResource Orange}" Margin="2,0"/>
+                                <Button Width="50" Height="50" Click="PutWafer"
+                       			ToolTip="Trả hàng"
+                       			IsEnabled="{Binding AllowPutWafer, UpdateSourceTrigger=PropertyChanged}"
+                       			Content="▼" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,0" Style="{DynamicResource RotateStyle}" Background="{DynamicResource Orange}" Grid.Row="1"/>
+                                <Rectangle Fill="{DynamicResource LightPrimary}" RadiusY="27" RadiusX="27" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Width="30" Height="30" Stroke="{DynamicResource Orange}" StrokeThickness="2"/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Border x:Name="Machine" BorderThickness="2" Margin="5"            
+			HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="PM01Area" Margin="2" Grid.Column="1" d:IsHidden="True">
+                        <Border Margin="2"
+						BorderBrush="{DynamicResource DrakPrimary}" BorderThickness="1"
+						HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="20" Background="{DynamicResource Orange}">
+                            <Grid x:Name="PM01BodyWaferTable" Width="150" Height="150" Margin="2"/>
+                        </Border>
+                    </Grid>
+                    <Grid x:Name="PM10Area" Margin="2" Grid.Row="1" d:IsHidden="True">
+                        <Border Margin="2"
+						BorderBrush="{DynamicResource DrakPrimary}" BorderThickness="1"
+						HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="20" Background="{DynamicResource Orange}">
+                            <Grid x:Name="PM10BodyWaferTable" Width="150" Height="150" Margin="2">
+                                <Grid x:Name="Wafer">
+                                    <Rectangle RadiusY="75" RadiusX="75">
+                                        <Rectangle.Fill>
+                                            <RadialGradientBrush>
+                                                <GradientStop Color="#FFC9D300" Offset="1"/>
+                                                <GradientStop Color="White"/>
+                                                <GradientStop Color="#FFE6EE53" Offset="0.513"/>
+                                            </RadialGradientBrush>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                </Grid>
+                            </Grid>
+                        </Border>
+
+                    </Grid>
+                    <Grid x:Name="PM12Area" Margin="2" Grid.Column="2" Grid.Row="1" d:IsHidden="True">
+                        <Border Margin="2"
+						BorderBrush="{DynamicResource DrakPrimary}" BorderThickness="1"
+						HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="20" Background="{DynamicResource Orange}">
+                            <Grid x:Name="PM12BodyWaferTable" Width="150" Height="150" Margin="2"/>
+                        </Border>
+                    </Grid>
+                    <Grid x:Name="PM21Area" Margin="2" Grid.Row="2" Grid.Column="1" d:IsHidden="True">
+                        <Border Margin="2"
+						BorderBrush="{DynamicResource DrakPrimary}" BorderThickness="1"
+						HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="20" Background="{DynamicResource Orange}">
+                            <Grid x:Name="PM21BodyWaferTable" Width="150" Height="150" Margin="2"/>
+                        </Border>
+
+                    </Grid>
+                    <Grid x:Name="RobotArea" Margin="2" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                        <Grid.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Grid.RenderTransform>
+                        <Border x:Name="RobotBodyArea01" Margin="2" BorderThickness="1"
+						HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Grid Width="150" Height="150" Margin="2">
+                                <Grid Margin="-5">
+                                    <Rectangle RadiusY="79" RadiusX="79" 
+									StrokeThickness="2" Stroke="White"/>
+                                    <Rectangle RadiusY="75" RadiusX="75" 
+									Stroke="{DynamicResource Pink}"  Fill="{DynamicResource Pink}" 
+									StrokeThickness="1" HorizontalAlignment="Right" VerticalAlignment="Center" 
+									Width="5" Height="5" Margin="0,0,-1.5,0"/>
+                                </Grid>
+                                <Rectangle RadiusY="75" RadiusX="75" 
+								Stroke="{DynamicResource DrakPrimary}" 
+								StrokeThickness="10" Margin="20">
+                                    <Rectangle.Fill>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#FF00796B" Offset="1"/>
+                                            <GradientStop Color="White"/>
+                                        </RadialGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <Grid Margin="0,60" Height="20">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border x:Name="RobotArmArea" Margin="50,0,0,0">
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FF00796B" Offset="0.9"/>
+                                                <GradientStop Color="White" Offset="0.488"/>
+                                                <GradientStop Color="#FF00796B" Offset="0.1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <Grid x:Name="RealArmArea" Width="30" HorizontalAlignment="Left" Margin="-20,0,0,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="20"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Grid.ColumnSpan="2">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="20"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid Margin="0,0,-5,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Border Background="{DynamicResource Pink}" CornerRadius="0,0,0,5" RenderTransformOrigin="1,0">
+                                                        <Border.RenderTransform>
+                                                            <TransformGroup>
+                                                                <ScaleTransform/>
+                                                                <SkewTransform/>
+                                                                <RotateTransform Angle="10"/>
+                                                                <TranslateTransform/>
+                                                            </TransformGroup>
+                                                        </Border.RenderTransform>
+                                                    </Border>
+                                                    <Border Grid.Row="2" Background="{DynamicResource Pink}" CornerRadius="5,0,0,0" RenderTransformOrigin="1,1">
+                                                        <Border.RenderTransform>
+                                                            <TransformGroup>
+                                                                <ScaleTransform/>
+                                                                <SkewTransform/>
+                                                                <RotateTransform Angle="-10"/>
+                                                                <TranslateTransform/>
+                                                            </TransformGroup>
+                                                        </Border.RenderTransform>
+                                                    </Border>
+                                                </Grid>
+                                            </Grid>
+                                            <Grid Grid.Column="1" Margin="-1">
+                                                <Rectangle RadiusY="4.5" RadiusX="4.5" 
+												Stroke="{DynamicResource Pink}" 
+												Margin="0" StrokeThickness="2" 
+												Fill="{DynamicResource Pink}"/>
+
+                                            </Grid>
+                                        </Grid>
+                                    </Border>
+                                </Grid>
+                                <Rectangle RadiusY="75" RadiusX="75" 
+								Stroke="{DynamicResource DrakPrimary}" 
+								Margin="50" StrokeThickness="2">
+                                    <Rectangle.Fill>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#FF00796B" Offset="1"/>
+                                            <GradientStop Color="White"/>
+                                        </RadialGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="RobotBodyArea02" Margin="-162,2,0,2" BorderThickness="1"
+						HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                            <Grid x:Name="RobotBodyWaferTable" Width="150" Height="150" Margin="2"/>
+                        </Border>
+
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

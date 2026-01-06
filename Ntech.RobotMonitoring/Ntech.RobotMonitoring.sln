@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36127.28
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ntech.MAUI.RobotMonitoring", "Ntech.MAUI.RobotMonitoring\Ntech.MAUI.RobotMonitoring\Ntech.MAUI.RobotMonitoring.csproj", "{4A3DF9EA-8AD4-BDEB-A223-3391519972EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ntech.WPF.RobotMonitoring", "Ntech.WPF.RobotMonitoring\Ntech.WPF.RobotMonitoring\Ntech.WPF.RobotMonitoring.csproj", "{8CD51B69-0A8E-A86E-524A-FE6B99DCF4B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A3DF9EA-8AD4-BDEB-A223-3391519972EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A3DF9EA-8AD4-BDEB-A223-3391519972EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A3DF9EA-8AD4-BDEB-A223-3391519972EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A3DF9EA-8AD4-BDEB-A223-3391519972EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CD51B69-0A8E-A86E-524A-FE6B99DCF4B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CD51B69-0A8E-A86E-524A-FE6B99DCF4B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CD51B69-0A8E-A86E-524A-FE6B99DCF4B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CD51B69-0A8E-A86E-524A-FE6B99DCF4B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3949DC5-20AF-4E83-8FF6-E0909DC4FC5D}
+	EndGlobalSection
+EndGlobal
